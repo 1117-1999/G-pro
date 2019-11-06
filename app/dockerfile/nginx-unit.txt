@@ -1,0 +1,4 @@
+﻿FROM nginx-unit
+
+mkdir -p /var/www/
+

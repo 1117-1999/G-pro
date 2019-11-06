@@ -1,0 +1,6 @@
+﻿FROM nginx
+
+mkdir -p /var/www/
+
+COPY ./html /var/www/html
+
