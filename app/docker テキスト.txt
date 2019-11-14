@@ -1,0 +1,42 @@
+※卒業制作の構成※
+
+環境：Docker
+使用コンテナイメージ：Nginx,Nginx-unit,mysql
+初期設定・構築：Docker-File
+
+
+※docker-container-nginx
+
+systemctl start docker.socket
+
+docker pull archlinux/base
+docker pull nginx
+
+mkdir -p /nginx/log
+docker run -d -p 80:80 -v $(pwd)/nginx/log:/var/log/nginx --name WEBSVR nginx
+
+※ここまで※
+
+
+※docker-container-nginx/unit※
+
+docker run -d --name APSVR nginx/unit
+
+※ここまで※
+
+
+※docker-container-mysql※
+
+docker run -it --name SQLSVR -e MYSQL_ROOT_PASSWORD=root -d mysql
+ユーザはdel,add,veiw,updateの四種
+
+shell：mysql -u ユーザ名 --passwd=パスワード -e 処理内容
+※ここまで※
+
+
+※注意事項※
+
+Docker run,start で起動できないもの（OS自体やプロンプト起動）
+	・・・run に -d を付けて起動する
+
+commit:Dockerイメージの作成

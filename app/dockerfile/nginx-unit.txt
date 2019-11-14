@@ -2,3 +2,6 @@
 
 mkdir -p /var/www/
 
+RUN apt-get update
+RUN apt-get install syslog-ng
+RUN apt-get python3 unit-python3.5 python3-pip
