@@ -1,0 +1,31 @@
+﻿ID一覧表（ID P、名前、分類）
+
+学生所属表（S_ID P、ID F、分類 F、クラスID）
+
+教員所属表（T_ID P、ID F、分類 F、カレッジID）
+
+カレッジ一覧表（カレッジID P、カレッジ名、教員ID（カレッジ長）F null、分類、foreign key(ID、分類)）
+
+学科一覧表（学科ID　P、学科名、カレッジID F、教員ID（学科長） F null、分類、foreign key(ID、分類)）
+
+クラス一覧表（クラスID P、学科ID F、期、教員ID（担任）、foreign key(ID、分類)）
+
+授業一覧表（授業名 P、クラスID F、教員ID（担当） F）
+
+ディレクトリ一覧表（ディレクトリID P、ディレクトリ名、上位ディレクトリID F、授業名 F）
+
+ファイル一覧表（ファイルID P、ファイル名、ディレクトリID（親ディレクトリ）、ID）
+
+T-ID：教員ID
+S-ID：学生ID
+C-ID：クラスID
+D-ID：ディレクトリID
+K-ID：カレッジID
+
+S-LIST：学生所属表
+T-LIST：教員所属表
+C-LIST：クラス一覧表
+K-LIST：カレッジ一覧表
+L-LIST：授業一覧表
+D-LIST：ディレクトリ一覧表
+G-LIST：学科一覧表
