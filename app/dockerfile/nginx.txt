@@ -5,6 +5,4 @@ mkdir -p /var/www/
 COPY ./html /var/www/html
 
 RUN apt-get update
-RUN apt-get install syslog-ng 
-
-#テキストエディタが必要ならvim か nano だが nano の動作がおかしいので、vim 推奨
+RUN apt-get install syslog-ng
